@@ -1,0 +1,109 @@
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.blob-shape {
+  clip-path: polygon(42% 1%, 74% 17%, 95% 45%, 85% 79%, 52% 98%, 18% 85%, 2% 51%, 14% 18%);
+  transition: clip-path 4s ease-in-out;
+}
+
+.blob-shape:hover {
+  clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+}
+
+.animate-blob-1 {
+  animation: moveBlob1 15s infinite alternate ease-in-out;
+}
+
+.animate-blob-2 {
+  animation: moveBlob2 20s infinite alternate-reverse ease-in-out;
+}
+
+@keyframes moveBlob1 {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translate(40px, 20px) scale(1.08) rotate(12deg);
+  }
+  100% {
+    transform: translate(-20px, 40px) scale(0.92) rotate(-8deg);
+  }
+}
+
+@keyframes moveBlob2 {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translate(-40px, -30px) scale(1.15) rotate(-15deg);
+  }
+  100% {
+    transform: translate(30px, -15px) scale(0.85) rotate(10deg);
+  }
+}
+
+.soft-shadow {
+  box-shadow: 0 10px 40px -10px rgba(45, 106, 79, 0.08);
+}
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Admin login page decor + animations (ported from Admin/Login.html) */
+.bg-decor {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(60px);
+  opacity: 0.35;
+  z-index: 0;
+}
+
+.input-wrap:focus-within {
+  border-color: #e0533c;
+  box-shadow: 0 0 0 4px rgba(224, 83, 60, 0.12);
+}
+
+.btn-primary {
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px -6px rgba(224, 83, 60, 0.45);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.card-enter {
+  animation: cardIn 0.5s ease both;
+}
+
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Admin: intentionally borderless login controls + compact management UI */
+.admin-field, .admin-field:focus { border: 0 !important; outline: none !important; box-shadow: none !important; }
+input.admin-field::-webkit-inner-spin-button, input.admin-field::-webkit-outer-spin-button { opacity: .5; }
